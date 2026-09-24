@@ -7,6 +7,10 @@ Waffle
 > Персонально я це зробив так у павершеллі (з кореня репозиторію):
 
 ```powershell
-chcp 65001
-java "-Dfile.encoding=UTF-8" "-Dstdout.encoding=UTF-8" task1/Main.java
+[Console]::InputEncoding = [System.Text.UTF8Encoding]::new($false)
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+
+java "-Dfile.encoding=UTF-8" "-Dstdout.encoding=UTF-8" task2/Main.java
 ```
+
+^^ Оновив, воно працює краще за `chcp 65001`, хоча б в Павершеллі. У терміналі VSCode теж працює
